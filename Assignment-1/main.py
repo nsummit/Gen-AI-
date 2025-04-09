@@ -1,4 +1,4 @@
-def hybrid_encode(text: str) -> str:
+def encoder(text: str) -> str:
     encoded = []
     for char in text:
         if ord(char) < 128:
@@ -9,7 +9,7 @@ def hybrid_encode(text: str) -> str:
     return " ".join(encoded)
 
 
-def hybrid_decode(text: str) -> str:
+def decoder(text: str) -> str:
     tokens = text.strip().split()
     decoded = ""
     for token in tokens:
@@ -24,8 +24,8 @@ def hybrid_decode(text: str) -> str:
 # Example usage
 if __name__ == "__main__":
     original_text = "Hello, दोस्तों !"
-    encoded = hybrid_encode(original_text)
+    encoded = encoder(original_text)
     print("Encoded:", encoded)
 
-    decoded = hybrid_decode(encoded)
+    decoded = decoder(encoded)
     print("Decoded:", decoded)
